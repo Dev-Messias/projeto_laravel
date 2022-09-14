@@ -1,0 +1,11 @@
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+h1{
+    font-weight: bold;
+}
+
+#navbar  img {
+    width: 150px;
+}
