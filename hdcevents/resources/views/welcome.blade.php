@@ -3,24 +3,32 @@
  @section('title', 'HCV Events')
 
  @section('content')
-      <h1>Algum titulo</h1>
-      @if(10 == 5)
-            <p>A condição é true</p>
-      @endif
 
-      <p>{{$nome}}</p>
+ <div id="search-container" class="col-md-12">
+    <h1>Busque um evento</h1>
 
-      @if($nome == "Messias")
-      <p>O nome é {{$nome}}</p>
-      @else 
-      <p>O nome não é Mateus</p>
-      @endif
+    <form action="">
+      <input type="text" id="search" name="search" class="form-control" placeholder="Procurar...">
+    </form>
+ </div>
 
-      <p>{{$idade}}</p>
+ <div id="events-container" class="col-md-12">
+    <h2>Próximos Eventos</h2>
+    <p class="subtitle" >Veja os eventos dos próximos dias</p>
+    <div id="cards-container" class="row">
+      @foreach ($events as $event)
+          <div class="card col-md-3">
+            <img src="/img/events/{{ $event->image }}" alt="{{ $event->title }}"> 
+            <div class="card-body">
+              <p class="card-date">17/09/2022</p>
+              <h5 class="card-title">{{ $event->title }}</h5>
+              <p class="card-participants">X Participantes</p>
+              <a href="" class="btn btn-primary">Saber mais</a>
+            </div>
+          </div>
+      @endforeach
+    </div>
+ </div>
 
-
-      @for($i = 0;$i < count($arr); $i++)
-        <p>{{ $arr[$i]}}</p>
-      @endfor
  @endsection
  
